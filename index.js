@@ -12,6 +12,7 @@ async function checkWeather(city) {
     document.querySelector(".weather").style.display = "none";
   } else {
     let data = await response.json();
+    console.log(data)
 
     document.querySelector(".city").innerHTML = data.name;
     document.querySelector(".temp").innerHTML =
@@ -20,15 +21,15 @@ async function checkWeather(city) {
     document.querySelector(".wind").innerHTML = data.wind.speed + " Km ";
 
     if (data.weather[0].main == "Clouds") {
-      weatherIcon.src = "./weather-app-img/images/Clouds.png";
+      weatherIcon.src = "./weather-app-img/images/clouds.png";
     } else if (data.weather[0].main == "Clear") {
-      weatherIcon.src = "./weather-app-img/images/Clear.png";
+      weatherIcon.src = "./weather-app-img/images/clear.png";
     } else if (data.weather[0].main == "Rain") {
-      weatherIcon.src = "./weather-app-img/images/Rain.png";
+      weatherIcon.src = "./weather-app-img/images/rain.png";
     } else if (data.weather[0].main == "Drizzle") {
-      weatherIcon.src = "./weather-app-img/images/Drizzle.png";
+      weatherIcon.src = "./weather-app-img/images/drizzle.png";
     } else if (data.weather[0].main == "Mist") {
-      weatherIcon.src = "./weather-app-img/images/Mist.png";
+      weatherIcon.src = "./weather-app-img/images/mist.png";
     }
     document.querySelector(".weather").style.display = "block";
     document.querySelector(".error").style.display = "none";
